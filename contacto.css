@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+/* Vínculo al framework online (Animate.css) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* 1. COLORES Y CONFIGURACIÓN GLOBAL */
+:root {
+    --verde-suave: #83aa8b;
+    --verde-oscuro: #2D3E33;
+    --crema-fondo: #cbcec5;
+    --blanco-floral: #fffaf0;
+    --naranja-amarillo: #FFB331;
+    --negro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+	text-align: center;
+    background-color: var(--crema-fondo);
+    color: var(--negro);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 2. ENCABEZADO Y NAVEGACIÓN */
+.encabezado {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: var(--crema-fondo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 80px;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logotipo-img {
+    height: 50px;
+}
+
+.logotipo-nombre {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.navegacion-enlace {
+    text-decoration: none;
+    color: var(--negro);
+    margin-left: 25px;
+    transition: color 0.3s;
+    font-weight: 400;
+}
+
+.navegacion-enlace:hover {
+    color: var(--verde-suave);
+}
+
+/* ESTILOS ESPECÍFICOS DE CONTACTO */
+.contenedor-contacto{
+	padding: 100px 5% 50px;
+	text-align: center;
+	color: var(--verde-oscuro);
+
+}
+
+.descripcion-seccion {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    font-size: 30px;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+    border-left: 8px solid var(--naranja-amarillo);
+    padding-left: 20px;
+}
+
+.cuadricula-contacto {
+	font-family: 'Montserrat', sans-serif;
+	padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.tarjeta-contacto{
+    background-color: var(--blanco-floral);
+    padding: 40px 20px;
+    text-align: center;
+    border: 2px solid var(--verde-suave);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-contacto:hover {
+    transform: translateY(-10px);
+	background-color: var(--verde-suave);
+    border-color: var(--blanco-floral);
+	color: var(--blanco-floral);
+}
+
+.icon-contacto {
+    font-size: 3rem;
+    color: var(--verde-suave);
+    margin-bottom: 20px;
+}
+
+.tarjeta-contacto h3 {
+    font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.tarjeta-contacto p {
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.boton-contacto {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--negro);
+    color: white;
+    padding: 10px 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.boton-contacto:hover {
+    background-color: var(--blanco-floral);
+    color: var(--negro);
+}
+
+.shadow {
+    display: inline-block;
+    justify-content: center;
+    padding: 15px 40px;
+    border: 3px solid var(--verde-suave);
+    border-radius: 50px;
+    background: var(--blanco-floral);
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    animation: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.shadow:hover {
+    background: var(--verde-suave);
+	border: 3px solid var(--blanco-floral);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 8. PIE DE PÁGINA */
+.pie-pagina {
+    background-color: var(--crema-fondo);
+	margin-bottom: 50px;
+	margin-top: -60px;
+    text-align: center;
+}
+
+.logotipo-final {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .cuadricula-contacto {
+        grid-template-columns: 1fr;
+    }
+}

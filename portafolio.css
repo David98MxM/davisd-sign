@@ -1,0 +1,306 @@
+@charset "utf-8";
+
+/* Vínculo al framework online (Animate.css) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+:root {
+    --verde-suave: #83aa8b;
+	--verde-oscuro: #2D3E33;
+    --crema-fondo: #cbcec5;
+    --blanco-floral: #fffaf0;
+    --naranja-amarillo: #FFB331;
+    --negro: #000000;
+}
+
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--crema-fondo);
+    color: var(--negro);
+}
+
+strong{
+    font-weight: bold;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: var(--crema-fondo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 80px;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logotipo-img {
+    height: 50px;
+}
+
+.logotipo-nombre {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.navegacion-enlace {
+    text-decoration: none;
+    color: var(--negro);
+    margin-left: 25px;
+    transition: color 0.3s;
+    font-weight: 400;
+}
+
+.navegacion-enlace:hover {
+    color: var(--verde-suave);
+}
+
+/* CONTENEDOR GENERAL */
+
+.titulo-pagina{
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+    color: var(--verde-oscuro);
+    overflow-x: hidden;
+	margin: 20px;
+}
+
+.contenedor-portafolio {
+    padding: 100px 5% 50px;
+}
+
+.seccion-trabajo {
+    margin-bottom: 100px;
+    padding-top: 50px; }
+
+.titulo-seccion {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem; margin-bottom: 40px;
+    border-left: 8px solid var(--naranja-amarillo);
+    padding-left: 20px;
+}
+
+.titulo-seccion span {
+    color: var(--verde-suave);
+}
+
+/* CUADRÍCULA DE IMÁGENES (Diseño y Foto) */
+.cuadricula-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0, 410px));
+    gap: 20px;
+}
+
+.design-trabajo {
+    position: relative;
+    height: auto;
+    object-fit: cover;
+    background-color: var(--blanco-floral);
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--verde-suave);
+    transition: transform 0.3s ease;
+}
+
+.img-galeria {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fotografia-trabajo {
+    position: relative;
+    height: auto;
+    object-fit: cover;
+    background-color: var(--blanco-floral);
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--verde-suave);
+    transition: transform 0.3s ease;
+}
+
+.design-trabajo:hover
+.overlay-info { opacity: 1; }
+.design-trabajo:hover
+.img-galeria {
+    transform: scale(1.1);
+}
+
+.overlay-info h3 {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.fotografia-trabajo:hover
+.overlay-info { opacity: 1; }
+.fotografia-trabajo:hover
+.img-galeria {
+    transform: scale(1.1);
+}
+
+/* AMPLIACIÓN DE IMÁGEN (LIGHTBOX) */
+.visor-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+.imagen-ampliada {
+    max-width: 90%;
+    max-height: 85%;
+    border: 5px solid var(--verde-suave);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+#pie-foto {
+    margin-top: 20px;
+    color: var(--blanco-floral);
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.5rem;
+}
+
+.cerrar-visor {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: var(--naranja-amarillo);
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cerrar-visor:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* SECCIÓN PDF CON VISOR */
+.contenedor-pdf {
+    display: flex;
+    gap: 30px;
+    background: var(--blanco-floral);
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid var(--verde-suave);
+}
+
+.lista-documentos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.enlace-pdf {
+    background: white;
+    border: 2px solid var(--verde-suave);
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.enlace-pdf:hover {
+    background: var(--naranja-amarillo);
+    transform: translateX(10px);
+}
+
+.visor-pdf {
+    flex: 2;
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+/* ESTILOS ESPECÍFICOS NEXUS MODS 3D */
+.modelo-trabajo{
+    margin-top: -5%;
+}
+
+.subtitulo-seccion{
+    align-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.enlace-perfil-contenedor {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.boton-nexus-global {
+    display: inline-block;
+    justify-content: center;
+    padding: 15px 40px;
+    border: 3px solid var(--verde-suave);
+    border-radius: 50px;
+    background: var(--blanco-floral);
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    animation: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.boton-nexus-global:hover {
+    background: var(--verde-suave);
+	border: 3px solid var(--blanco-floral);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 8. PIE DE PÁGINA */
+.pie-pagina {
+    background-color: var(--crema-fondo);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.logotipo-final {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contenedor-pdf { flex-direction: column; }
+    .titulo-seccion { font-size: 2rem; }
+}

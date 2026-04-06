@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/* Vínculo al framework online (Animate.css) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* 1. CONFIGURACIÓN GLOBAL Y VARIABLES */
+:root {
+    --verde-suave: #83aa8b;
+    --verde-oscuro: #2D3E33;
+    --crema-fondo: #cbcec5;
+    --blanco-floral: #fffaf0;
+    --naranja-amarillo: #FFB331;
+    --negro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--crema-fondo);
+    color: var(--negro);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 2. ENCABEZADO (Header)*/
+.encabezado {
+	background-image: url("rsrcs/franja.jpg");
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+	color: var(--blanco-floral);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 80px;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logotipo-img {
+    height: 50px;
+}
+
+.logotipo-nombre {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.navegacion-enlace {
+    text-decoration: none;
+    color: var(--blanco-floral);
+    margin-left: 25px;
+    transition: color 0.3s;
+    font-weight: 400;
+}
+
+.navegacion-enlace:hover {
+    color: var(--verde-suave);
+}
+
+
+/* 3. SECCIÓN DE PORTADA (Hero) */
+.seccion-portada {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.imagen-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.capa-texto {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: var(--verde-suave);
+    z-index: 2;
+}
+
+.titulo-hero {
+    font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif';
+    font-size: 100px;
+    line-height: 1;
+    /* Estilo 1: Aplicación de animación del framework */
+    animation: fadeInDown; 
+    animation-duration: 1.5s;
+}
+
+.titulo-hero span {
+    font-size: 0.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+/* 4. SECCIÓN DE INTRODUCCIÓN */
+.seccion-introduccion {
+    background-color: var(--verde-suave);
+    color: var(--blanco-floral);
+    padding: 100px 15%;
+    text-align: center;
+}
+
+.titulo-secundario {
+    font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif';
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.contenedor-texto {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.texto-destacado {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el enlace con apariencia de botón */
+.boton-portafolio {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 3px solid var(--blanco-floral);
+    border-radius: 50px;
+    background: var(--blanco-floral);
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    animation: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.boton-portafolio:hover {
+    background: var(--verde-suave);
+	border: 3px solid var(--blanco-floral);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 5. PIE DE PÁGINA */
+.pie-pagina {
+    background-color: var(--crema-fondo);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.logotipo-final {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 6. RESPONSIVE */
+@media (max-width: 768px) {
+    .encabezado {
+        padding: 0 20px;
+    }
+    
+    .navegacion {
+        gap: 10px;
+    }
+    
+    .navegacion-enlace {
+        font-size: 0.8rem;
+    }
+    
+    .seccion-introduccion {
+        padding: 60px 5%;
+    }
+
+    .titulo-hero {
+        font-size: 60px;
+    }
+}
